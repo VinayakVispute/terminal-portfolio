@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vinayak's Terminal Portfolio
 
-## Getting Started
-
-First, run the development server:
+Welcome to my terminal portfolio! This README is your guide to exploring my digital world. Let's get started!
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+visitor@github:~$ ./start_portfolio.sh
+
+ __     __   _                                    _    
+ \ \   / /  (_)  _ __     __ _   _   _    __ _   | | __
+  \ \ / /   | | | '_ \   / _` | | | | |  / _` |  | |/ /
+   \ V /    | | | | | | | (_| | | |_| | | (_| |  |   < 
+    \_/     |_| |_| |_|  \__,_|  \__, |  \__,_|  |_|\_\
+                                 |___/                 
+
+Welcome to Vinayak's Terminal Portfolio!
+Type 'help' for a list of available commands.
+
+visitor@portfolio:~$ help
+
+Available commands:
+  about       - Who is Vinayak?
+  skills      - My technical arsenal
+  projects    - What I've built
+  experience  - Where I've worked
+  education   - My learning journey
+  contact     - Get in touch
+  visit       - Open the live portfolio
+
+⌨️ Keyboard Shortcuts
+
+- `↑` / `↓` - Navigate through command history
+- `Tab` - Auto-complete commands
+- `Ctrl + L` - Clear screen
+- `Ctrl + C` - Cancel current command
+
+visitor@portfolio:~$ about
+
+Hey there! 👋 I'm Vinayak, a full-stack developer with a passion for creating 
+interactive and user-friendly web applications. When I'm not coding, you can 
+find me exploring new technologies, contributing to open-source projects, or 
+enjoying a good cup of coffee. ☕
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Quick Start for Developers
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this portfolio locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/vinayak/terminal-portfolio.git
+    ```
 
-## Learn More
+2. **Install dependencies**:
+    ```bash
+    cd terminal-portfolio
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Start the development server**:
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open `http://localhost:3000` in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📫 Contact
 
-## Deploy on Vercel
+Feel free to reach out if you have any questions or just want to connect!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Website**: [visputevinayak.co](https://visputevinayak.co)
+- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **LinkedIn**: [Your Name](https://linkedin.com/in/yourprofile)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+### License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Created with ❤️ by Vinayak. Last updated: 2024.
