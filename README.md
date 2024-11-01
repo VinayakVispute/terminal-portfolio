@@ -18,13 +18,15 @@ Type 'help' for a list of available commands.
 visitor@portfolio:~$ help
 
 Available commands:
+  help        - for commands help
   about       - Who is Vinayak?
   skills      - My technical arsenal
   projects    - What I've built
   experience  - Where I've worked
-  education   - My learning journey
-  contact     - Get in touch
-  visit       - Open the live portfolio
+  socials     - Display my social media links
+  resume      - View or download my resume
+  experiences - Show my work experiences
+  goals       - Display my current goals
 
 ⌨️ Keyboard Shortcuts
 
@@ -68,8 +70,8 @@ To run this portfolio locally:
 Feel free to reach out if you have any questions or just want to connect!
 
 - **Website**: [visputevinayak.co](https://visputevinayak.co)
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-- **LinkedIn**: [Your Name](https://linkedin.com/in/yourprofile)
+- **GitHub**: [VinayakVispute](https://github.com/VinayakVispute)
+- **LinkedIn**: [Vinayak Vispute](https://www.linkedin.com/in/vispute-vinayak/)
 
 ---
 
