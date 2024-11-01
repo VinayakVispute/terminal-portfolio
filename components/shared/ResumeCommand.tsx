@@ -7,45 +7,71 @@ interface ResumeCommandProps {
 
 const ResumeCommand: React.FC<ResumeCommandProps> = ({ shouldRedirect }) => {
   const [loadingChar, setLoadingChar] = useState("/");
+  const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
-    if (shouldRedirect) {
+    if (shouldRedirect && !isOpened) {
       const timer = setTimeout(() => {
-        window.location.href = "https://your-resume-link-here.com";
-      }, 1500); // Redirect after 3 seconds
+        window.open(process.env.NEXT_PUBLIC_RESUMELINK || "", "_blank");
+        setIsOpened(true);
+      }, 1500); // Open the resume link in a new tab after 1.5 seconds
 
       return () => clearTimeout(timer);
     }
-  }, [shouldRedirect]);
+  }, [shouldRedirect, isOpened]);
 
   useEffect(() => {
-    const chars = ["/", "-", "\\", "|"];
-    let index = 0;
+    if (!isOpened) {
+      const chars = ["/", "-", "\\", "|"];
+      let index = 0;
 
-    const interval = setInterval(() => {
-      index = (index + 1) % chars.length;
-      setLoadingChar(chars[index]);
-    }, 250);
+      const interval = setInterval(() => {
+        index = (index + 1) % chars.length;
+        setLoadingChar(chars[index]);
+      }, 250); // Update loading character every 250ms
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [isOpened]);
 
   return (
     <div className="font-mono text-foreground mt-2">
       <p className="flex items-center">
         <FileText className="mr-2 text-cyan" size={20} />
-        <span className="text-yellow">I&apos;m loading! {loadingChar}</span>
+        {isOpened ? (
+          <span className="text-green">Resume opened in a new tab!</span>
+        ) : (
+          <span className="text-yellow">I&apos;m loading! {loadingChar}</span>
+        )}
       </p>
       <p className="text-muted-foreground mt-1">
-        If you are not redirected automatically, please
-        <a
-          href="https://your-resume-link-here.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue hover:underline ml-1"
-        >
-          click here
-        </a>
+        {isOpened ? (
+          <>
+            You can also{" "}
+            <a
+              href={process.env.NEXT_PUBLIC_RESUMELINK || ""}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue hover:underline ml-1"
+            >
+              click here
+            </a>{" "}
+            to open it again.
+          </>
+        ) : (
+          <>
+            If not redirected, please
+            <a
+              href={process.env.NEXT_PUBLIC_RESUMELINK || ""}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue hover:underline ml-1"
+            >
+              click here
+            </a>
+            .
+          </>
+        )}
       </p>
     </div>
   );

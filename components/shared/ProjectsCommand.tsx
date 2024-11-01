@@ -122,38 +122,56 @@ const ProjectCard: React.FC<Project> = ({ title, description, links }) => (
 const ProjectsCommand: React.FC = () => {
   const projects: Project[] = [
     {
-      title: "Portfolio Terminal",
+      title: "DevCollab Hub",
       description:
-        "A terminal-style portfolio website built with Next.js and Tailwind CSS.",
+        "Scalable real-time web chat app with group creation, image/video sharing, and basic photo editing.",
       links: [
         {
           type: "github",
-          url: "https://github.com/yourusername/portfolio-terminal",
+          url: "https://github.com/VinayakVispute/DevCollab-Hub",
         },
-        { type: "live", url: "https://your-portfolio-url.com" },
-        {
-          type: "blog",
-          url: "https://your-blog-url.com/portfolio-terminal-post",
-        },
+        // { type: "live", url: "https://devcollab-hub.com" },
       ],
     },
     {
-      title: "E-commerce Platform",
+      title: "AnimeNook Market",
       description:
-        "A full-stack e-commerce solution using MERN stack with advanced features.",
+        "E-commerce platform for anime-related merchandise with RESTful APIs and secure transactions.",
       links: [
         {
           type: "github",
-          url: "https://github.com/yourusername/ecommerce-platform",
+          url: "https://github.com/VinayakVispute/AnimeNookMarket",
         },
-        { type: "live", url: "https://your-ecommerce-demo.com" },
+        // { type: "live", url: "https://animenook-market.com" },
+      ],
+    },
+    {
+      title: "Adaptive Flow",
+      description:
+        "Video transcoding and adaptive streaming pipeline with FFmpeg, HLS, and Docker for multiple resolutions.",
+      links: [
         {
-          type: "Workflow",
-          url: "https://your-whiteboard-url.com/ecommerce-design",
+          type: "github",
+          url: "https://github.com/VinayakVispute/AdaptiveFlow",
+        },
+        { type: "live", url: "https://adaptiveflow.visputevinayak.co/" },
+        // {
+        //   type: "Workflow",
+        //   url: "https://your-whiteboard-url.com/adaptive-flow-design",
+        // },
+      ],
+    },
+    {
+      title: "Police QR Code Feedback System",
+      description:
+        "QR code-based feedback system with JWT authentication and MongoDB aggregation pipeline.",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/TechNodes2-0/Police-QR-Code-Feedback-System-2023",
         },
       ],
     },
-    // Add more projects as needed
   ];
 
   return (

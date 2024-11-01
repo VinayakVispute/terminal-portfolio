@@ -15,6 +15,19 @@ import HistoryCommand from "@/components/shared/HistoryCommand";
 import EchoCommand from "@/components/shared/EchoCommand";
 import DefaultCommand from "@/components/shared/DefaultCommand";
 
+const availableCommands = [
+  "help",
+  "about",
+  "skills",
+  "socials",
+  "projects",
+  "experience",
+  "goals",
+  "resume",
+  "history",
+  "clear",
+];
+
 const TerminalPage = () => {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [currentCommand, setCurrentCommand] = useState("");
@@ -37,8 +50,17 @@ const TerminalPage = () => {
     const command = target.value.trim();
     if (command) {
       setCommandHistory((prev) => [...prev, command]);
-      if (command === "clear") {
-        setCommandHistory([]);
+
+      // Change currentPath based on the command
+      if (availableCommands.includes(command)) {
+        if (command === "clear") {
+          setCurrentPath("portfolio");
+          setCommandHistory([]);
+        } else {
+          setCurrentPath(command); // Set current path to the command name
+        }
+      } else {
+        setCurrentPath("portfolio"); // Default to "portfolio" for unrecognized commands
       }
     }
     setCurrentCommand("");
@@ -51,14 +73,29 @@ const TerminalPage = () => {
   ) => {
     if (type === "clear") {
       e.preventDefault();
+
       setCommandHistory([]);
       setCurrentCommand("");
+      setCurrentPath("portfolio");
     }
     if (type === "cancel") {
       e.preventDefault();
+      if (currentCommand.trim() == "") {
+        return;
+      }
       const target = e.target as HTMLInputElement;
       setCommandHistory((prev) => [...prev, `${target.value} ^C`]);
       setCurrentCommand("");
+    }
+  };
+
+  const handleAutoComplete = () => {
+    const matchedCommand = availableCommands.find((command) =>
+      command.startsWith(currentCommand)
+    );
+
+    if (matchedCommand) {
+      setCurrentCommand(matchedCommand);
     }
   };
 
@@ -84,6 +121,10 @@ const TerminalPage = () => {
       } else if (e.key === "c") {
         handleShortcuts(e, "cancel");
       }
+    }
+    if (e.key === "Tab") {
+      e.preventDefault();
+      handleAutoComplete();
     }
   };
 

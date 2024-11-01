@@ -25,12 +25,15 @@ const HelpCommand = () => {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-muted">
-        Type a command and press Enter to execute.
-      </p>
-      <p className="mt-2 text-muted">
-        Use arrow keys ↑↓ to navigate command history.
-      </p>
+      <div className="mt-4 space-y-2">
+        <p className="text-muted">Type a command and press Enter to execute.</p>
+        <p className="text-muted">
+          <span className="text-cyan">Ctrl + L</span> or{" "}
+          <span className="text-cyan">clear</span>: Clear screen |{" "}
+          <span className="text-cyan">Tab</span>: Auto-complete |{" "}
+          <span className="text-cyan">Ctrl + C</span>: Cancel command
+        </p>
+      </div>
     </div>
   );
 };
