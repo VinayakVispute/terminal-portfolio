@@ -31,7 +31,7 @@ const TerminalPage = () => {
     terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [commandHistory]);
 
-  const handleCommandSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleCommandSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
     const command = target.value.trim();

@@ -20,7 +20,8 @@ const Heading = () => {
           <span className="text-orange">↓</span> to navigate command history.
         </p>
         <p className="text-justify">
-          Type <span className="text-red">"help"</span> for more commands.
+          Type <span className="text-red">&quot;help&quot;</span> for more
+          commands.
         </p>
       </div>
     </div>

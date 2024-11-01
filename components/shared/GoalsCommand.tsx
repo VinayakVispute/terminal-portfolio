@@ -30,13 +30,13 @@ const GoalsCommand: React.FC = () => {
           My Journey to Purpose and Excellence
         </h2>
         <p className="text-cyan italic">
-          🚀 Let's dive into a journey of{" "}
+          🚀 Let&apos;s dive into a journey of{" "}
           <ColoredText color="text-green">growth</ColoredText> and{" "}
           <ColoredText color="text-magenta">ambition</ColoredText>, setting
           meaningful goals that{" "}
           <ColoredText color="text-yellow">inspire</ColoredText> and{" "}
-          <ColoredText color="text-red">empower</ColoredText>. These aren't just
-          aspirations; they're stepping stones on the path to making a{" "}
+          <ColoredText color="text-red">empower</ColoredText>. These aren&apos;t
+          just aspirations; they&apos;re stepping stones on the path to making a{" "}
           <ColoredText color="text-cyan">real impact</ColoredText> in the tech
           world.
         </p>
@@ -63,9 +63,10 @@ const GoalsCommand: React.FC = () => {
           text={
             <>
               Level up my experience so I can design systems for any{" "}
-              <ColoredText color="text-green">big feature</ColoredText>. I'm
-              talking 'design-a-system-to-handle-a-million-cat-videos' level of
-              expertise.
+              <ColoredText color="text-green">big feature</ColoredText>.
+              I&apos;m talking
+              &apos;design-a-system-to-handle-a-million-cat-videos&apos; level
+              of expertise.
             </>
           }
           color="border-green"
@@ -90,8 +91,8 @@ const GoalsCommand: React.FC = () => {
           text={
             <>
               Buy a <ColoredText color="text-red">BMW M5</ColoredText>. Because
-              nothing says 'I've made it in tech' like a car that goes from 0 to
-              'Holy cow!' in 3.2 seconds.
+              nothing says &apos;I&apos;ve made it in tech&apos; like a car that
+              goes from 0 to &apos;Holy cow!&apos; in 3.2 seconds.
             </>
           }
           color="border-red"

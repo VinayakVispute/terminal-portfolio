@@ -5,12 +5,13 @@ const AboutCommand: React.FC = () => {
   return (
     <div className="font-mono text-foreground space-y-4">
       <p>
-        👋 Hey there! I'm <span className="text-yellow font-bold">Vinayak</span>
-        , the guy who turns coffee into code!
+        👋 Hey there! I&apos;m{" "}
+        <span className="text-yellow font-bold">Vinayak</span>, the guy who
+        turns coffee into code!
       </p>
 
       <p>
-        Right now, I'm working as
+        Right now, I&apos;m working as
         <span className="text-cyan font-bold">
           {" "}
           Full Stack Developer
@@ -28,18 +29,18 @@ const AboutCommand: React.FC = () => {
       <p>
         <span className="text-green">I love building cool stuff</span> and{" "}
         <span className="text-orange">trying new things</span>. Sometimes I
-        break things too, but hey, that's how you learn, right? 🤷‍♂️
+        break things too, but hey, that&apos;s how you learn, right? 🤷‍♂️
       </p>
 
-      <p>When I'm not coding, you can find me:</p>
+      <p>When I&apos;m not coding, you can find me:</p>
       <ul className="list-disc list-inside space-y-2 ml-4">
         <li>
           🎵 Jamming to <span className="text-green">Spotify</span>
         </li>
         <li>
           😂 Laughing at{" "}
-          <span className="text-yellow">BeastBoyShub on YouTube</span> (He's my
-          comedy API)
+          <span className="text-yellow">BeastBoyShub on YouTube</span>{" "}
+          (He&apos;s my comedy API)
         </li>
         <li>
           😴 Trying to <span className="text-red">fix my sleep schedule</span>{" "}
@@ -55,7 +56,7 @@ const AboutCommand: React.FC = () => {
         world).
         <span className="text-magenta font-bold">
           {" "}
-          It ain't much, but it's honest work!
+          It ain&apos;t much, but it&apos;s honest work!
         </span>{" "}
         🚜
       </p>

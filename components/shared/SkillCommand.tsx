@@ -50,8 +50,8 @@ const SkillsCommand: React.FC = () => {
         />
       ))}
       <div className="text-muted-light mt-2">
-        Always learning, always growing. These are just the tools I'm currently
-        wielding in my coding adventures!
+        Always learning, always growing. These are just the tools I&apos;m
+        currently wielding in my coding adventures!
       </div>
     </div>
   );

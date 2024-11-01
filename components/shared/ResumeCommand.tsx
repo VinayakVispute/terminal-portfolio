@@ -34,7 +34,7 @@ const ResumeCommand: React.FC<ResumeCommandProps> = ({ shouldRedirect }) => {
     <div className="font-mono text-foreground mt-2">
       <p className="flex items-center">
         <FileText className="mr-2 text-cyan" size={20} />
-        <span className="text-yellow">I'm loading! {loadingChar}</span>
+        <span className="text-yellow">I&apos;m loading! {loadingChar}</span>
       </p>
       <p className="text-muted-foreground mt-1">
         If you are not redirected automatically, please

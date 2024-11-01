@@ -62,8 +62,8 @@ const SocialsCommand: React.FC = () => {
         <SocialLink key={index} {...social} />
       ))}
       <div className="text-muted-light mt-4">
-        Feel free to reach out! I'm always open to interesting conversations and
-        collaborations.
+        Feel free to reach out! I&apos;m always open to interesting
+        conversations and collaborations.
       </div>
     </div>
   );
