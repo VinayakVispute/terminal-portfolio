@@ -86,6 +86,7 @@ const TerminalPage = () => {
       const target = e.target as HTMLInputElement;
       setCommandHistory((prev) => [...prev, `${target.value} ^C`]);
       setCurrentCommand("");
+      return;
     }
   };
 
@@ -119,6 +120,7 @@ const TerminalPage = () => {
       if (e.key === "l") {
         handleShortcuts(e, "clear");
       } else if (e.key === "c") {
+        console.log("Ctrl + C");
         handleShortcuts(e, "cancel");
       }
     }
@@ -154,6 +156,7 @@ const TerminalPage = () => {
       case "history":
         return <HistoryCommand commandHistory={commandHistory} />;
       default:
+        if (cmd.endsWith("^C")) return;
         return <DefaultCommand command={cmd} />;
     }
   };

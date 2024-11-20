@@ -73,26 +73,12 @@ const GoalsCommand: React.FC = () => {
         />
 
         <GoalItem
-          icon={<Brain className="text-magenta" size={24} />}
-          text={
-            <>
-              Explore fields like{" "}
-              <ColoredText color="text-magenta">AI/ML</ColoredText> and{" "}
-              <ColoredText color="text-magenta">Cybersecurity</ColoredText>,
-              embracing continuous learning to stay at the forefront of
-              innovation.
-            </>
-          }
-          color="border-magenta"
-        />
-
-        <GoalItem
           icon={<Car className="text-red" size={24} />}
           text={
             <>
               Buy a <ColoredText color="text-red">BMW M5</ColoredText>. Because
-              nothing says &apos;I&apos;ve made it in tech&apos; like a car that
-              goes from 0 to &apos;Holy cow!&apos; in 3.2 seconds.
+              who needs coffee when your car goes from 0 to RATA RATA BOOM in
+              3.2 seconds?
             </>
           }
           color="border-red"

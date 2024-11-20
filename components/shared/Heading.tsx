@@ -13,15 +13,18 @@ const Heading = () => {
         {asciiArt}
       </pre>
 
-      <div className="text-center max-w-2xl text-cyan text-xl">
+      <div className="text-center max-w-2xl mx-auto text-cyan text-xl">
         <p className="text-justify mb-2">Welcome to my Portfolio.</p>
         <p className="text-justify mb-2">
           Use <span className="text-orange">↑</span> and{" "}
           <span className="text-orange">↓</span> to navigate command history.
         </p>
-        <p className="text-justify">
+        <p className="text-justify mb-2">
           Type <span className="text-red">&quot;help&quot;</span> for more
           commands.
+        </p>
+        <p className="text-justify">
+          Note: Commands are case-sensitive. Please use lowercase only.
         </p>
       </div>
     </div>
