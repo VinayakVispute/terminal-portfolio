@@ -82,3 +82,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 Created with ❤️ by Vinayak. Last updated: 2024.
+
+
+A neon red Honda Civic with glowing accents, racing on a futuristic Tokyo highway at night. The background is illuminated by vibrant neon signs and city lights, reflecting off the wet asphalt. Visible boosters emit a bright, glowing jet of energy from the rear of the car, emphasizing its speed. The scene captures a sense of motion with light trails and a dynamic angle from the side. High-resolution photorealistic rendering with vibrant colors and intricate details.
