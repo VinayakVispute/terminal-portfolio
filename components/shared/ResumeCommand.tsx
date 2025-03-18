@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import { FileText } from "lucide-react";
+import { FileText, ExternalLink } from "lucide-react";
 
 interface ResumeCommandProps {
   shouldRedirect: boolean;
@@ -8,17 +10,18 @@ interface ResumeCommandProps {
 const ResumeCommand: React.FC<ResumeCommandProps> = ({ shouldRedirect }) => {
   const [loadingChar, setLoadingChar] = useState("/");
   const [isOpened, setIsOpened] = useState(false);
+  const resumeLink = process.env.NEXT_PUBLIC_RESUMELINK || "";
 
   useEffect(() => {
     if (shouldRedirect && !isOpened) {
       const timer = setTimeout(() => {
-        window.open(process.env.NEXT_PUBLIC_RESUMELINK || "", "_blank");
+        window.open(resumeLink, "_blank");
         setIsOpened(true);
-      }, 1500); // Open the resume link in a new tab after 1.5 seconds
+      }, 1000); // Open the resume link in a new tab after 1 second
 
       return () => clearTimeout(timer);
     }
-  }, [shouldRedirect, isOpened]);
+  }, [shouldRedirect, isOpened, resumeLink]);
 
   useEffect(() => {
     if (!isOpened) {
@@ -41,7 +44,10 @@ const ResumeCommand: React.FC<ResumeCommandProps> = ({ shouldRedirect }) => {
         {isOpened ? (
           <span className="text-green">Resume opened in a new tab!</span>
         ) : (
-          <span className="text-yellow">I&apos;m loading! {loadingChar}</span>
+          <span className="text-yellow flex items-center">
+            <span className="animate-pulse mr-2">●</span>
+            Opening resume in new tab {loadingChar}
+          </span>
         )}
       </p>
       <p className="text-muted-foreground mt-1">
@@ -49,27 +55,28 @@ const ResumeCommand: React.FC<ResumeCommandProps> = ({ shouldRedirect }) => {
           <>
             You can also{" "}
             <a
-              href={process.env.NEXT_PUBLIC_RESUMELINK || ""}
+              href={resumeLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue hover:underline ml-1"
+              className="text-blue hover:underline flex items-center inline-flex"
             >
               click here
+              <ExternalLink size={12} className="ml-1" />
             </a>{" "}
             to open it again.
           </>
         ) : (
           <>
-            If not redirected, please
+            If not redirected, please{" "}
             <a
-              href={process.env.NEXT_PUBLIC_RESUMELINK || ""}
+              href={resumeLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue hover:underline ml-1"
+              className="text-blue hover:underline flex items-center inline-flex"
             >
               click here
+              <ExternalLink size={12} className="ml-1" />
             </a>
-            .
           </>
         )}
       </p>
