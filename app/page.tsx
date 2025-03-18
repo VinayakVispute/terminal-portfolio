@@ -17,6 +17,7 @@ import DefaultCommand from "@/components/shared/DefaultCommand";
 import EffectsCommand from "@/components/shared/EffectsCommand";
 import MatrixRain from "@/components/effects/MatrixRain";
 import CrtEffect from "@/components/effects/CrtEffect";
+import CodetimeCommand from "@/components/shared/CodetimeCommand";
 
 const availableCommands = [
   "help",
@@ -30,6 +31,7 @@ const availableCommands = [
   "history",
   "clear",
   "effects",
+  "codetime",
 ];
 
 const TerminalPage = () => {
@@ -181,6 +183,8 @@ const TerminalPage = () => {
         return <GoalsCommand />;
       case "resume":
         return <ResumeCommand shouldRedirect={true} />;
+      case "codetime":
+        return <CodetimeCommand />;
       default:
         if (cmd.endsWith("^C")) return;
         return <DefaultCommand command={cmd} />;
