@@ -9,6 +9,7 @@ const HelpCommand = () => {
     { name: "resume", description: "View or download my resume" },
     { name: "experiences", description: "Show my work experiences" },
     { name: "goals", description: "Display my current goals" },
+    { name: "effects", description: "Toggle Matrix/CRT visual effects" },
     { name: "clear", description: "Clear the terminal screen" },
     { name: "history", description: "Show command history" },
     { name: "echo [text]", description: "Display a line of text" },

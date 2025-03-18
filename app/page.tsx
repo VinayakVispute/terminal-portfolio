@@ -14,6 +14,9 @@ import ResumeCommand from "@/components/shared/ResumeCommand";
 import HistoryCommand from "@/components/shared/HistoryCommand";
 import EchoCommand from "@/components/shared/EchoCommand";
 import DefaultCommand from "@/components/shared/DefaultCommand";
+import EffectsCommand from "@/components/shared/EffectsCommand";
+import MatrixRain from "@/components/effects/MatrixRain";
+import CrtEffect from "@/components/effects/CrtEffect";
 
 const availableCommands = [
   "help",
@@ -26,6 +29,7 @@ const availableCommands = [
   "resume",
   "history",
   "clear",
+  "effects",
 ];
 
 const TerminalPage = () => {
@@ -136,6 +140,16 @@ const TerminalPage = () => {
       const cleanedText = text.replace(/^["'](.*)["']$/, "$1"); // Remove surrounding quotes if present
       return <EchoCommand text={cleanedText} />;
     }
+
+    if (cmd.startsWith("effects")) {
+      const parts = cmd.split(" ");
+      // If there's an argument (effects type)
+      if (parts.length > 1) {
+        return <EffectsCommand effectArg={parts[1]} />;
+      }
+      return <EffectsCommand />;
+    }
+
     switch (cmd) {
       case "help":
         return <HelpCommand />;
@@ -163,10 +177,14 @@ const TerminalPage = () => {
 
   return (
     <div className="bg-background text-foreground p-4 min-h-screen flex flex-col">
-      <div className="flex-shrink-0">
+      {/* Special effects components */}
+      <MatrixRain />
+      <CrtEffect />
+
+      <div className="flex-shrink-0 relative z-10">
         <Heading />
       </div>
-      <div className="flex-grow mt-4 flex flex-col overflow-auto">
+      <div className="flex-grow mt-4 flex flex-col overflow-auto relative z-10">
         <div className="p-4">
           {commandHistory.map((cmd, index) => (
             <div key={index} className="mb-2">

@@ -9,3 +9,104 @@
 .custom-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+/* CRT and effects animations */
+@keyframes flicker {
+  0% {
+    opacity: 0.02;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.03;
+  }
+  15% {
+    opacity: 0.02;
+  }
+  20% {
+    opacity: 0.04;
+  }
+  25% {
+    opacity: 0.03;
+  }
+  30% {
+    opacity: 0.02;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.03;
+  }
+  45% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.04;
+  }
+  55% {
+    opacity: 0.03;
+  }
+  60% {
+    opacity: 0.02;
+  }
+  65% {
+    opacity: 0.05;
+  }
+  70% {
+    opacity: 0.03;
+  }
+  75% {
+    opacity: 0.02;
+  }
+  80% {
+    opacity: 0.04;
+  }
+  85% {
+    opacity: 0.03;
+  }
+  90% {
+    opacity: 0.02;
+  }
+  95% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.03;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+.bg-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+/* Apply subtle TV scan effect */
+@layer utilities {
+  .crt-scan:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 2px;
+    z-index: 100;
+    pointer-events: none;
+  }
+}
