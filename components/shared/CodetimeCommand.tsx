@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Clock, Code, ExternalLink, RefreshCw } from "lucide-react";
+import Image from "next/image";
 
 const CodetimeCommand = () => {
   const [loading, setLoading] = useState(false);
@@ -31,7 +32,7 @@ const CodetimeCommand = () => {
           <div>
             <h4 className="font-semibold text-yellow flex items-center">
               <Code size={16} className="mr-2" />
-              Today's Coding Time
+              Today&apos;s Coding Time
             </h4>
             <p className="text-sm text-muted-foreground mt-1">
               Tracked via CodeTime VS Code extension
@@ -51,19 +52,23 @@ const CodetimeCommand = () => {
           </button>
         </div>
 
-        <div className="flex justify-center py-3 bg-black/30 rounded-md mb-4">
-          <img
+        <div className="flex justify-center py-3 bg-black/30 rounded-md mb-4 relative h-[20px]">
+          <Image
             src={codetimeBadgeUrl}
             alt="CodeTime Badge"
             className={`${
               refreshing ? "opacity-50" : "opacity-100"
             } transition-opacity`}
+            width={200}
+            height={20}
+            unoptimized={true}
+            priority
           />
         </div>
 
         <div className="text-sm space-y-2">
           <p className="text-muted-foreground">
-            This badge shows how much time I've spent coding today, tracked
+            This badge shows how much time I&apos;ve spent coding today, tracked
             automatically by the CodeTime extension in VS Code.
           </p>
 
