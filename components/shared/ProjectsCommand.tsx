@@ -122,6 +122,17 @@ const ProjectCard: React.FC<Project> = ({ title, description, links }) => (
 const ProjectsCommand: React.FC = () => {
   const projects: Project[] = [
     {
+      title: "Aora - Capture Share Engage",
+      description:
+        "Mobile content sharing platform built with React Native and Appwrite. Features real-time search, secure authentication, smooth animations, and seamless media uploads.",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/VinayakVispute/Aora-Capture-Share-Engage",
+        },
+      ],
+    },
+    {
       title: "DevCollab Hub",
       description:
         "Scalable real-time web chat app with group creation, image/video sharing, and basic photo editing.",
