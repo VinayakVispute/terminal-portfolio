@@ -11,7 +11,7 @@ const HelpCommand = () => {
     { name: "goals", description: "Display my current goals" },
     { name: "effects", description: "Toggle Matrix/CRT visual effects" },
     { name: "clear", description: "Clear the terminal screen" },
-    { name: "history", description: "Show command history" },
+    { name: "history [filter]", description: "Show filtered command history" },
     { name: "echo [text]", description: "Display a line of text" },
   ];
 

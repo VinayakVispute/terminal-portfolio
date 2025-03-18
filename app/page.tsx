@@ -150,6 +150,20 @@ const TerminalPage = () => {
       return <EffectsCommand />;
     }
 
+    if (cmd.startsWith("history")) {
+      // Handle history command with optional filter argument
+      const parts = cmd.split(/\s(.+)/); // Split on first space only
+      if (parts.length > 1 && parts[1].trim()) {
+        return (
+          <HistoryCommand
+            commandHistory={commandHistory}
+            filterArg={parts[1].trim()}
+          />
+        );
+      }
+      return <HistoryCommand commandHistory={commandHistory} />;
+    }
+
     switch (cmd) {
       case "help":
         return <HelpCommand />;
@@ -167,8 +181,6 @@ const TerminalPage = () => {
         return <GoalsCommand />;
       case "resume":
         return <ResumeCommand shouldRedirect={true} />;
-      case "history":
-        return <HistoryCommand commandHistory={commandHistory} />;
       default:
         if (cmd.endsWith("^C")) return;
         return <DefaultCommand command={cmd} />;
