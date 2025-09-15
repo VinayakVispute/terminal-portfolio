@@ -13,7 +13,7 @@ const EffectsContext = createContext<EffectsContextType | undefined>(undefined);
 
 export const EffectsProvider = ({ children }: { children: ReactNode }) => {
   const [matrixEffect, setMatrixEffect] = useState(false);
-  const [crtEffect, setCrtEffect] = useState(true);
+  const [crtEffect, setCrtEffect] = useState(false);
 
   const toggleMatrixEffect = () => setMatrixEffect((prev) => !prev);
   const toggleCrtEffect = () => setCrtEffect((prev) => !prev);

@@ -115,32 +115,39 @@ const ExperienceCard: React.FC<Experience> = ({
 const ExperienceCommand: React.FC = () => {
   const experiences: Experience[] = [
     {
-      company: "AntiChurn",
+      company: "Bundled Design",
       role: "Full Stack Developer Intern",
       period: "04/2024 – Present",
       location: "Remote",
       projects: [
         {
-          name: "FounderFeed",
-          description:
-            "A content aggregation platform for startup founders and entrepreneurs.",
-          hasLiveLink: false,
-        },
-        {
-          name: "TheBundled.ai",
+          name: "Bundled.design",
           description:
             "A SaaS platform offering a suite of Generative AI tools with a unified LLM chat interface.",
           hasLiveLink: true,
-          liveLink: "https://thebundled.ai",
+          liveLink: "https://bundled.design",
+        },
+        {
+          name: "TheBundledAI Backup Service",
+          description:
+            "Comprehensive MongoDB backup and restore system with automated scheduling, real-time WebSocket logs, and Google Drive integration. Includes a Next.js dashboard, Redis-backed logging, and Clerk auth for secure operations.",
+          hasLiveLink: true,
+          liveLink:
+            "https://github.com/VinayakVispute/thebundledai-backup-service",
+        },
+        {
+          name: "Image Optimization Stack (AWS)",
+          description:
+            "Serverless image pipeline using CloudFront, S3, and Lambda (Sharp) for on-demand transforms, aggressive caching, and Origin Shield. URL normalization at the edge, fallback processing via Lambda, and lifecycle-managed S3 storage for cost efficiency.",
+          hasLiveLink: false,
         },
       ],
       achievements: [
-        "Developed scripts to scrape content from platforms like Medium and TechCrunch, implementing MongoDB storage and admin controls.",
-        "Built an Admin Dashboard for content approval, deployed and optimized Next.js apps on Vercel.",
-        "Created a universal API in Next.js for AI tool integrations, reducing complexity by 40%.",
-        "Implemented an icon generator using DALL-E and integrated caching with Vercel KV.",
-        "Designed architecture for video tools and reverse proxy for WordPress blogs, optimizing scalability.",
-        "Integrated Razorpay for subscriptions, managing real-time webhook responses with MongoDB change streams.",
+        "Architected a robust SaaS platform by integrating Generative AI APIs (Replicate, Astria, Stability, and DALL-E) and a unified LLM chat interface to deliver transformative user experiences.",
+        "Engineered a modular API in Next.js using Driver/Provider/Dispatcher patterns, achieving ~35% performance improvement, ~20% error reduction, and faster debugging.",
+        "Designed architecture for video tools with polling mechanisms and webhook elimination in failure scenarios, reducing overhead by ~30% and improving delivery speed by ~25%.",
+        "Built a custom Cloudinary-like media pipeline on AWS for efficient asset management and delivery.",
+        "Integrated Dodo Payment for subscription management, improving transaction reliability and system resilience.",
       ],
     },
   ];

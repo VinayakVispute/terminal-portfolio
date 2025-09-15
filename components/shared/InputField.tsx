@@ -1,13 +1,23 @@
 "use client";
 import React, { useState } from "react";
 
-const InputField = (params: any) => {
+interface InputFieldProps {
+  currentPath: string;
+  handleCommandSubmit: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  currentCommand: string;
+  setCurrentCommand: (value: string) => void;
+  inputRef?: React.RefObject<HTMLInputElement>;
+}
+
+const InputField = (params: InputFieldProps) => {
   const {
     currentPath,
     handleCommandSubmit,
     handleKeyDown,
     currentCommand,
     setCurrentCommand,
+    inputRef,
   } = params;
 
   return (
@@ -23,6 +33,7 @@ const InputField = (params: any) => {
         onKeyDown={(e) => {
           handleKeyDown(e);
         }}
+        ref={inputRef}
       />
     </div>
   );

@@ -104,6 +104,13 @@ const SocialsCommand: React.FC = () => {
           icon: <Github size={18} />,
           category: "professional",
         },
+        {
+          platform: "Website",
+          username: "VinayakVispute.dev",
+          url: "https://vinayakvispute.dev",
+          icon: <ExternalLink size={18} />,
+          category: "professional",
+        },
       ],
     },
     {
@@ -188,13 +195,13 @@ const SocialsCommand: React.FC = () => {
           conversations and collaborations.
         </div>
 
-        <button
+        {/* <button
           onClick={() => setShowContactForm(!showContactForm)}
           className="flex items-center text-xs bg-base01 hover:bg-base0 transition-colors text-cyan py-1 px-3 rounded-md"
         >
           <MessageSquare size={14} className="mr-1" />
           {showContactForm ? "Hide Form" : "Quick Message"}
-        </button>
+        </button> */}
       </div>
 
       {showContactForm && (

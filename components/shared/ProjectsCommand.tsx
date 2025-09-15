@@ -122,66 +122,33 @@ const ProjectCard: React.FC<Project> = ({ title, description, links }) => (
 const ProjectsCommand: React.FC = () => {
   const projects: Project[] = [
     {
-      title: "Aora - Capture Share Engage",
+      title: "DevCollab Hub — 01/2024 – 05/2024",
       description:
-        "Mobile content sharing platform built with React Native and Appwrite. Features real-time search, secure authentication, smooth animations, and seamless media uploads.",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/VinayakVispute/Aora-Capture-Share-Engage",
-        },
-      ],
-    },
-    {
-      title: "DevCollab Hub",
-      description:
-        "Scalable real-time web chat app with group creation, image/video sharing, and basic photo editing.",
+        "Tech Stack: MERN, Next.js, TypeScript, Redis Pub/Sub, Socket.io. Implemented group creation, image/video sharing, and Cloudinary-powered photo editing to boost engagement. Designed a scalable, microservices-inspired architecture using Kafka and Redis Pub/Sub for robust real-time data streaming.",
       links: [
         {
           type: "github",
           url: "https://github.com/VinayakVispute/DevCollab-Hub",
         },
-        // { type: "live", url: "https://devcollab-hub.com" },
       ],
     },
     {
-      title: "AnimeNook Market",
+      title: "Adaptive Flow — 10/2024 – 10/2024",
       description:
-        "E-commerce platform for anime-related merchandise with RESTful APIs and secure transactions.",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/VinayakVispute/AnimeNookMarket",
-        },
-        // { type: "live", url: "https://animenook-market.com" },
-      ],
-    },
-    {
-      title: "Adaptive Flow",
-      description:
-        "Video transcoding and adaptive streaming pipeline with FFmpeg, HLS, and Docker for multiple resolutions.",
+        "Implemented adaptive bitrate streaming to cut video load times by ~40% with automatic quality adjustment for varying bandwidth. Tech Stack: Next.js, FFmpeg, Docker, Azure Queue, Blob Storage, Container Instances.",
       links: [
         {
           type: "github",
           url: "https://github.com/VinayakVispute/AdaptiveFlow",
         },
         { type: "live", url: "https://adaptiveflow.visputevinayak.co/" },
-        // {
-        //   type: "Workflow",
-        //   url: "https://your-whiteboard-url.com/adaptive-flow-design",
-        // },
       ],
     },
     {
-      title: "Police QR Code Feedback System",
+      title: "Code-Server Auto Scaling Manager — 07/2025 – Present",
       description:
-        "QR code-based feedback system with JWT authentication and MongoDB aggregation pipeline.",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/TechNodes2-0/Police-QR-Code-Feedback-System-2023",
-        },
-      ],
+        "Engineered on-demand dev environments by auto-scaling code-server on AWS EC2 and terminating idle sessions for cost efficiency. Built a resilient setup using Redis for state, and Nginx reverse proxy for custom HTTPS domains, with a warm-spare pool for fast allocation and self-healing. Tech Stack: TypeScript, AWS (EC2, ASG, Route53), Redis, Nginx, Docker.",
+      links: [],
     },
   ];
 
@@ -192,7 +159,15 @@ const ProjectsCommand: React.FC = () => {
         <ProjectCard key={index} {...project} />
       ))}
       <div className="text-muted-light mt-4">
-        These are just a few highlights. Check out my GitHub for more projects!
+        These are just a few highlights. Check out my GitHub for more projects!{" "}
+        <Link
+          href="https://github.com/VinayakVispute"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan hover:underline"
+        >
+          github.com/VinayakVispute
+        </Link>
       </div>
     </div>
   );

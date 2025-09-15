@@ -40,6 +40,7 @@ const TerminalPage = () => {
   const [currentPath, setCurrentPath] = useState("portfolio");
   const [historyIndex, setHistoryIndex] = useState(-1);
   const terminalEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setHistoryIndex(commandHistory.length);
@@ -192,7 +193,10 @@ const TerminalPage = () => {
   };
 
   return (
-    <div className="bg-background text-foreground p-4 min-h-screen flex flex-col">
+    <div
+      className="bg-background text-foreground p-4 min-h-screen flex flex-col"
+      onClick={() => inputRef.current?.focus()}
+    >
       {/* Special effects components */}
       <MatrixRain />
       <CrtEffect />
@@ -216,11 +220,11 @@ const TerminalPage = () => {
           <div ref={terminalEndRef} />
           <InputField
             currentPath={currentPath}
-            setCurrentPath={setCurrentPath}
             handleCommandSubmit={handleCommandSubmit}
             handleKeyDown={handleKeyDown}
             currentCommand={currentCommand}
             setCurrentCommand={setCurrentCommand}
+            inputRef={inputRef}
           />
         </div>
       </div>

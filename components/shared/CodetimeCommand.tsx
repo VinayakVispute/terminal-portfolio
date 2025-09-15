@@ -1,24 +1,31 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Clock, Code, ExternalLink, RefreshCw } from "lucide-react";
-import Image from "next/image";
+import { Clock, Code, ExternalLink } from "lucide-react";
 
 const CodetimeCommand = () => {
   const [loading, setLoading] = useState(false);
-  const [refreshing, setRefreshing] = useState(false);
+  const [message, setMessage] = useState("");
 
-  // Codetime badge URL
-  const codetimeBadgeUrl =
-    "https://img.shields.io/endpoint?style=flat-square&color=222&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D30061%26project%3D%26in=86400000";
-
-  // Refresh the data (simulated)
-  const handleRefresh = () => {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 1000);
-  };
+  useEffect(() => {
+    const fetchMessage = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch(
+          "https://api.codetime.dev/v3/users/shield?uid=30061&minutes=1440",
+          { cache: "no-store" }
+        );
+        if (!res.ok) throw new Error("Failed to fetch CodeTime data");
+        const data = await res.json();
+        setMessage(data?.message || "");
+      } catch (e) {
+        setMessage("");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMessage();
+  }, []);
 
   return (
     <div className="font-mono text-foreground space-y-4">
@@ -28,64 +35,33 @@ const CodetimeCommand = () => {
       </div>
 
       <div className="bg-base02 p-4 rounded-md">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
-          <div>
-            <h4 className="font-semibold text-yellow flex items-center">
-              <Code size={16} className="mr-2" />
-              Today&apos;s Coding Time
-            </h4>
-            <p className="text-sm text-muted-foreground mt-1">
-              Tracked via CodeTime VS Code extension
-            </p>
-          </div>
-
-          <button
-            onClick={handleRefresh}
-            disabled={refreshing}
-            className="mt-2 md:mt-0 px-3 py-1 bg-base01 text-cyan hover:bg-base0 transition-colors rounded-md text-sm flex items-center"
-          >
-            <RefreshCw
-              size={14}
-              className={`mr-1 ${refreshing ? "animate-spin" : ""}`}
-            />
-            Refresh
-          </button>
+        <div className="mb-4">
+          <h4 className="font-semibold text-yellow flex items-center">
+            <Code size={16} className="mr-2" />
+            Today&apos;s Coding Time
+          </h4>
+          <p className="text-sm text-muted-foreground mt-1">
+            Tracked via CodeTime VS Code extension
+          </p>
         </div>
 
-        <div className="flex justify-center py-3 bg-black/30 rounded-md mb-4 relative h-[20px]">
-          <Image
-            src={codetimeBadgeUrl}
-            alt="CodeTime Badge"
-            className={`${
-              refreshing ? "opacity-50" : "opacity-100"
-            } transition-opacity`}
-            width={200}
-            height={20}
-            unoptimized={true}
-            priority
-          />
+        <div className="flex justify-center items-center py-3 bg-black/30 rounded-md mb-4 min-h-[40px]">
+          {loading ? (
+            <span className="text-muted-foreground text-sm">Loading…</span>
+          ) : message ? (
+            <span className="text-green font-semibold">{message}</span>
+          ) : (
+            <span className="text-muted-foreground text-sm">
+              No data available
+            </span>
+          )}
         </div>
 
         <div className="text-sm space-y-2">
           <p className="text-muted-foreground">
-            This badge shows how much time I&apos;ve spent coding today, tracked
+            This shows how much time I&apos;ve spent coding today, tracked
             automatically by the CodeTime extension in VS Code.
           </p>
-
-          <div className="flex flex-wrap gap-y-2 gap-x-4 pt-2 text-xs">
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Extension:</span>
-              <span className="text-cyan">CodeTime</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Tracking:</span>
-              <span className="text-green">Active</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Period:</span>
-              <span className="text-yellow">Last 24 hours</span>
-            </div>
-          </div>
         </div>
       </div>
 
