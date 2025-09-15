@@ -148,7 +148,12 @@ const ProjectsCommand: React.FC = () => {
       title: "Code-Server Auto Scaling Manager — 07/2025 – Present",
       description:
         "Engineered on-demand dev environments by auto-scaling code-server on AWS EC2 and terminating idle sessions for cost efficiency. Built a resilient setup using Redis for state, and Nginx reverse proxy for custom HTTPS domains, with a warm-spare pool for fast allocation and self-healing. Tech Stack: TypeScript, AWS (EC2, ASG, Route53), Redis, Nginx, Docker.",
-      links: [],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/VinayakVispute/multi-user-code-server",
+        },
+      ],
     },
   ];
 
